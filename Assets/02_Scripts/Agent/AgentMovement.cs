@@ -32,7 +32,12 @@ public class AgentMovement : MonoBehaviour
     {
         _rb.linearVelocity = _moveDir * _currentVelocity;
     }
-    
+
+    private void Update()
+    {
+        Filp();
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -53,5 +58,17 @@ public class AgentMovement : MonoBehaviour
 
         return Mathf.Clamp(_currentVelocity, 0, MovementDataSO.maxSpeed);
         // 을 여기서 해준다
+    }
+
+    private void Filp()
+    {
+        if (_moveDir.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (_moveDir.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
     }
 }
