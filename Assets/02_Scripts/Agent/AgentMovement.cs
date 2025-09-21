@@ -45,19 +45,16 @@ public class AgentMovement : MonoBehaviour
     
     private float CalculateSpeed(Vector2 dir)
     {
-        if (dir.sqrMagnitude > 0) // 위치 값이 0보다 크면
+        if (dir.sqrMagnitude > 0)
         {
             _currentVelocity += MovementDataSO.acceleration * Time.deltaTime;
-            // but 최대값의 초과값으로는 상승 X
         }
-        else // 위치가 값이 0보다 작으면
+        else
         {
             _currentVelocity -= MovementDataSO.deacceleration * Time.deltaTime;
-            // but 최소값의 미만값으로는 하락 X
         }
 
         return Mathf.Clamp(_currentVelocity, 0, MovementDataSO.maxSpeed);
-        // 을 여기서 해준다
     }
 
     private void Filp()
