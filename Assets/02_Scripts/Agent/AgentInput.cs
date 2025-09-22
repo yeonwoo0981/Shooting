@@ -21,9 +21,9 @@ public class AgentInput : MonoBehaviour
 
     public void GetPointInput() // 마우스 위치 읽기 메서드
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()); // 현재 마우스의 위치를 월드 좌표에서 읽는다.
-        OnPointerChanged?.Invoke(mousePos); // 바뀌면 현재 마우스 위치 이벤트 호출
-        
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        OnPointerChanged?.Invoke(mousePos);
+
         // 이걸 기반으로 총기 시스템 제작
     } 
     
