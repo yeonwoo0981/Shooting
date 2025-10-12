@@ -32,18 +32,18 @@ public class InputReader : ScriptableObject, IPlayerActions
 
     public void OnMouse(InputAction.CallbackContext context)
     {
-        MousePos = context.ReadValue<Vector2>();
+        MousePos = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
     }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            Debug.Log("마클");
+            Debug.Log("공격");
         }
         if (context.canceled)
         {
-            Debug.Log("마뗌");
+            Debug.Log("공격멈춤");
         }
     }
 }

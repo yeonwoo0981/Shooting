@@ -5848,7 +5848,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2141994587
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 428963871427550391, guid: cd51eb7beb222fa47828f05ce60c3922, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7113,12 +7113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agentInput: {fileID: 11400000, guid: 2447112b4cd314c4a8234cb91f15e669, type: 2}
-  <OnPointerChanged>k__BackingField:
+  OnPointerChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 725101454}
-        m_TargetAssemblyTypeName: AgentWeapon, Assembly-CSharp
-        m_MethodName: AimWeapon
+      - m_Target: {fileID: 1554620952}
+        m_TargetAssemblyTypeName: AgentRenderer, Assembly-CSharp
+        m_MethodName: FaceDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7128,9 +7128,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1554620952}
-        m_TargetAssemblyTypeName: AgentRenderer, Assembly-CSharp
-        m_MethodName: FaceDirection
+      - m_Target: {fileID: 725101454}
+        m_TargetAssemblyTypeName: AgentWeapon, Assembly-CSharp
+        m_MethodName: AimWeapon
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

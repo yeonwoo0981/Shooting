@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
 {
    public InputReader _agentInput;
    public AgentMovement _agentMovement { get; private set; }
-   
-   [field:SerializeField] public UnityEvent<Vector2> OnPointerChanged { get; private set; }
+
+   public UnityEvent<Vector2> OnPointerChanged;
    
    private void Awake()
    {
@@ -17,14 +17,7 @@ public class Player : MonoBehaviour
 
    private void Update()
    {
+      OnPointerChanged?.Invoke(_agentInput.MousePos);
       _agentMovement.SetMove(_agentInput.Movement);
    }
-   
-   public void GetPointInput() // 마우스 위치 읽기 메서드
-   {
-      Vector2 mousePos = Camera.main.ScreenToWorldPoint(_agentInput.MousePos);
-      Debug.Log(mousePos);
-      OnPointerChanged?.Invoke(mousePos);
-      // 이걸 기반으로 총기 시스템 제작
-   } 
 }

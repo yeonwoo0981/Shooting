@@ -22,16 +22,6 @@ public class AgentWeapon : MonoBehaviour
 
     private void AdjustRendering()
     {
-        _weaponRenderer.FlipSprite(_desireAngle > 90 || _desireAngle < -90);
-    }
-
-    public void Shooting()
-    {
-        Debug.Log("총");
-    }
-
-    public void StopShooting()
-    {
-        Debug.Log("총끝");
+        _weaponRenderer.WeaponSprite(_desireAngle > 90 || _desireAngle < -90, _desireAngle > 90 && _desireAngle < 270);
     }
 }
