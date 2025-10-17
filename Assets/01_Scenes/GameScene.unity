@@ -3638,6 +3638,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691bb96128825e34ca124897128ce05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShooting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 742438790}
+        m_TargetAssemblyTypeName: _02_Scripts.Weapon.Rifle, Assembly-CSharp
+        m_MethodName: TryShooting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStopShooting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 742438790}
+        m_TargetAssemblyTypeName: _02_Scripts.Weapon.Rifle, Assembly-CSharp
+        m_MethodName: StopShooting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &742438786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,6 +3679,7 @@ GameObject:
   - component: {fileID: 742438787}
   - component: {fileID: 742438788}
   - component: {fileID: 742438789}
+  - component: {fileID: 742438790}
   m_Layer: 0
   m_Name: assault_rifle
   m_TagString: Untagged
@@ -3668,7 +3699,8 @@ Transform:
   m_LocalPosition: {x: 0.68, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 962037252}
   m_Father: {fileID: 725101453}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &742438788
@@ -3738,6 +3770,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54100521bcb55b46b6e4994d2aef1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &742438790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742438786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd0ac3521ad6e142bb18945e40dfad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponData: {fileID: 11400000, guid: 30f32b2550853f644b32a8a1ffdb1df1, type: 2}
+  _firePos: {fileID: 962037252}
 --- !u!1 &770163598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3836,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 2dc26e63fd431392000000005b3eac7f
+  m_ApplyToSortingLayers: 2dc26e63fd431392000000005b3eac7f35210bc9
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3822,6 +3868,37 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &962037251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962037252}
+  m_Layer: 0
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &962037252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962037251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.52299994, y: 0.071, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742438787}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012516755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3884,7 +3961,7 @@ GameObject:
   - component: {fileID: 1215252293}
   - component: {fileID: 1215252292}
   - component: {fileID: 1215252291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5689,7 +5766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406525353}
   - component: {fileID: 1406525354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovementCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6959,7 +7036,7 @@ MonoBehaviour:
   m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 2dc26e63fd43139200000000f192c29d5b3eac7f
+  m_ApplyToSortingLayers: 2dc26e63fd43139200000000f192c29d5b3eac7f35210bc9
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -7018,7 +7095,7 @@ GameObject:
   - component: {fileID: 1898544078}
   - component: {fileID: 1898544076}
   - component: {fileID: 1898544077}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

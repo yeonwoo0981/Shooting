@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167e1c036e45453f81d17adcd5207349, type: 3}
+  m_Name: Bullet
+  m_EditorClassIdentifier: 
+  <BulletPrefab>k__BackingField: {fileID: 7011273656275604019, guid: 94d2498a4f1640f499e833a6a93e4398, type: 3}
+  <Speed>k__BackingField: 15.57
+  <Damage>k__BackingField: 8.88484

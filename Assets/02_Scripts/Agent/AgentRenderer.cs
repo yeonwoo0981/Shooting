@@ -1,17 +1,19 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class AgentRenderer : MonoBehaviour
+namespace _02_Scripts.Agent
 {
-    public void FaceDirection(Vector2 pointerPos)
+    public class AgentRenderer : MonoBehaviour
     {
-        if (transform.position.x < pointerPos.x)
+        public void FaceDirection(Vector2 pointerPos)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (transform.position.x > pointerPos.x)
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (transform.position.x < pointerPos.x)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (transform.position.x > pointerPos.x)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
     }
 }

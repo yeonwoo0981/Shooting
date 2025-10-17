@@ -1,4 +1,6 @@
 using System;
+using _02_Scripts.Agent;
+using _02_Scripts.Data;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;

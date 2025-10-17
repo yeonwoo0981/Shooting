@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Player
+  - PlayerMovementCollider
+  - Obstacle
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: FrontWall
     uniqueID: 2646774513
+    locked: 0
+  - name: Bullet
+    uniqueID: 3372949813
     locked: 0
   m_RenderingLayers:
   - Default
