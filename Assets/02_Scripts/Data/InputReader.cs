@@ -1,3 +1,4 @@
+using System;
 using _02_Scripts.Weapon;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,10 @@ namespace _02_Scripts.Data
         private Controls _controls;
         public Vector2 MousePos { get; private set; }
         public Vector2 Movement { get; private set; }
+
+        public Action OnMousePressed;
+
+        public Action OnMouseReleased;
     
         private void OnEnable()
         {
@@ -42,10 +47,12 @@ namespace _02_Scripts.Data
             if (context.performed)
             {
                 Debug.Log("공격");
+                OnMousePressed?.Invoke();
             }
             if (context.canceled)
             {
                 Debug.Log("공격멈춤");
+                OnMouseReleased?.Invoke();
             }
         }
     }

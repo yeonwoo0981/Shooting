@@ -16,7 +16,7 @@ namespace _02_Scripts.Weapon
 
         private void FixedUpdate()
         {
-            _rb.linearVelocity = transform.right * (_speed * Time.deltaTime);
+            _rb.linearVelocity = transform.right * _speed;
         }
     }
 }

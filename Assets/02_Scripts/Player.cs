@@ -11,10 +11,19 @@ public class Player : MonoBehaviour
    public AgentMovement _agentMovement { get; private set; }
 
    public UnityEvent<Vector2> OnPointerChanged;
+
+   public UnityEvent OnAttackKeyPressed;
+   public UnityEvent OnAttackKeyReleased;
    
    private void Awake()
    {
       _agentMovement = GetComponent<AgentMovement>();
+   }
+
+   private void Start()
+   {
+      _agentInput.OnMousePressed += () => OnAttackKeyPressed?.Invoke();
+      _agentInput.OnMouseReleased += () => OnAttackKeyReleased?.Invoke();
    }
 
    private void Update()
