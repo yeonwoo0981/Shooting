@@ -2,34 +2,25 @@ using UnityEngine;
 
 public class Mission4 : MonoBehaviour
 {
-    int objSize;
-    public float circleR = 1f;
-    private float deg;
-    public float objSpeed = 140f;
-    public GameObject[] target;
+    [SerializeField] private Transform center;
+    [SerializeField] private float orbitRadius = 1.5f;
+    [SerializeField] private float rotationSpeed = 180f;
 
-    private void Start()
-    {
-        objSize = target.Length;
-        transform.localPosition = Vector3.zero;
-    }
+    private float currentAngle = 0f;
 
-    void Update()
+    private void Update()
     {
-        deg += Time.deltaTime * objSpeed;
-        if (deg < 360)
-        {
-            for (int i = 0; i < objSize; i++)
-            {
-                var rad = Mathf.Deg2Rad * (deg + (i * (360 / objSize)));
-                var x = circleR * Mathf.Sin(rad);
-                var y = circleR * Mathf.Cos(rad);
-                target[i].transform.position = transform.position + new Vector3(x, y);
-            }
-        }
-        else
-        {
-            deg = 0;
-        }
+        if (center == null) return;
+
+        currentAngle += rotationSpeed * Time.deltaTime;
+
+        float rad = currentAngle * Mathf.Deg2Rad;
+
+        Vector2 offset = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * orbitRadius;
+        transform.position = (Vector2)center.position + offset;
+
+        Vector2 direction = center.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
     }
 }
