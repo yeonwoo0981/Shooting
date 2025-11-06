@@ -5,7 +5,7 @@ namespace _02_Scripts.Data
     [CreateAssetMenu(fileName = "MovementDataSO", menuName = "SO/MovementDataSO")]
     public class MovementDataSO : ScriptableObject
     {
-        [Range(0, 30)] 
+        [Range(0, 30)]  // Range: 최소값부터 최대값 까지만 값 설정 가능
         public float maxSpeed = 15f;
     
         [Range(0.1f, 100)]
