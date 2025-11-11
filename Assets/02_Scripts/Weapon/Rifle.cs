@@ -48,11 +48,10 @@ namespace _02_Scripts.Weapon
             {
                 if (Ammo > 0)
                 {
-                    // 총알 한번에 소모되기 기능 만들어야 함
-                    Ammo -= _weaponData.BulletCount;
-                    Debug.Log($"{_weaponData.BulletCount}발 발사.");
                     for (int i = 0; i < _weaponData.GetBulletCountSpawn(); i++) 
                         Shoot();
+                    Ammo -= _weaponData.BulletCount;
+                    Debug.Log($"{_weaponData.BulletCount}발 발사.");
                 }
                 else
                 {

@@ -17,5 +17,5 @@ MonoBehaviour:
   <CoolTime>k__BackingField: 0.1
   <AutomaticFire>k__BackingField: 1
   <MultiBulletShoot>k__BackingField: 1
-  <BulletCount>k__BackingField: 10
+  <BulletCount>k__BackingField: 5
   <SpreadAngle>k__BackingField: 5.91
